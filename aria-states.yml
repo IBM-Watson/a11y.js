@@ -1,0 +1,161 @@
+Definitions:
+  Used in Roles: Advisory information about roles that use this state or property. This information is provided to help understand the appropriate usage of the state or property. Use of a given state or property is not defined when used on roles other than those listed.
+  Inherits into Roles: Advisory information about roles that inherit the state or property from an ancestor role.
+
+`aria-busy`
+  Link: http://www.w3.org/TR/wai-aria/states_and_properties#aria-busy
+  Desc: Indicates whether an element, and its subtree, are currently being updated.
+  Used in Roles:
+    - all
+  Value:
+    - true (Live region is still being updated)
+    - false | default (There are no more expected updates for that live region)
+
+`aria-checked`
+  Link: http://www.w3.org/TR/wai-aria/states_and_properties#aria-checked
+  Desc: Indicates the current "checked" state of checkboxes, radio buttons, and other widgets. See related [aria-pressed](http://www.w3.org/TR/wai-aria/states_and_properties#aria-pressed) and [aria-selected](http://www.w3.org/TR/wai-aria/states_and_properties#aria-selected).
+  Used in Roles:
+    - option
+  Inherits into Roles:
+    - menuitemradio
+    - radio
+    - treeitem
+  Value:
+    - true (The element is checked)
+    - false (The element supports being checked but is not currently checked)
+    - mixed (Indicates a mixed mode value for a tri-state checkbox or menuitemcheckbox)
+    - undefined | default (The element does not support being checked)
+
+`aria-disabled`
+  Link: http://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled
+  Desc: Indicates that the element is perceivable but disabled, so it is not editable or otherwise operable. See related [aria-hidden](http://www.w3.org/TR/wai-aria/states_and_properties#aria-hidden) and [aria-readonly](http://www.w3.org/TR/wai-aria/states_and_properties#aria-readonly.
+  Used in Roles:
+    - all
+  Value:
+    - true (The element and all focusabled descendants are disabled and its value cannot be changed by the user)
+    - false | default (The element is enabled)
+
+`aria-expanded`
+  Link: http://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded
+  Desc: Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed.
+  Used in Roles:
+    - button
+    - document
+    - link
+    - section
+    - sectionhead
+    - separator
+    - window
+  Inherits into Roles:
+    - alert
+    - alertdialog
+    - application
+    - article
+    - banner
+    - columnheader
+    - combobox
+    - complementary
+    - contentinfo
+    - definition
+    - dialog
+    - directory
+    - form
+    - grid
+    - gridcell
+    - group
+    - heading
+    - img
+    - landmark
+    - list
+    - listbox
+    - listitem
+    - log
+    - main
+    - marquee
+    - math
+    - menu
+    - menubar
+    - navigation
+    - note
+    - radiogroup
+    - region
+    - row
+    - rowgroup
+    - rowheader
+    - search
+    - select
+    - status
+    - tab
+    - tablist
+    - tabpanel
+    - timer
+    - toolbar
+    - tooltip
+    - tree
+    - treegrid
+    - treeitem
+  Value:
+    - true (The element, or another grouping element it controls, is expanded)
+    - false (The element, or another grouping element it controls, is collapsed)
+    - undefined | default (The element, or another grouping element it controls, is neither expandable nor collapsible; all its child elements are shown or there are no child elements)
+
+`aria-grabbed`
+  Link: http://www.w3.org/TR/wai-aria/states_and_properties#aria-grabbed
+  Desc: Indicates an element's "grabbed" state in a drag-and-drop operation.
+  Used in Roles:
+    - all
+  Value:
+    - true (Indicates that the element has been "grabbed" for dragging)
+    - false (Indicates that the element supports being dragged)
+    - undefined | default (Indicates that the element doesn not support being dragged)
+
+`aria-hidden`
+  Link: http://www.w3.org/TR/wai-aria/states_and_properties#aria-hidden
+  Desc: Indicates that the element and all of its descendants are not visible or perceivable to any user as implemented by the author. See related [aria-disabled](http://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled).
+  Used in Roles:
+    - all
+  Value:
+    - true (Indicates that this section of the document and its children are hidden from the rendered view)
+    - false | default (Indicates that this section of the document is rendered)
+
+`aria-invalid`
+  Link: http://www.w3.org/TR/wai-aria/states_and_properties#aria-invalid
+  Desc: Indicates the entered value does not conform to the format expected by the application.
+  Used in Roles:
+    - all
+  Value:
+    - grammar (A grammatical error was detected)
+    - false | default (There are no detected errors in the value)
+    - spelling (A spelling error was detected)
+    - true (The value entered by the user has failed validation)
+
+`aria-pressed`
+  Link: http://www.w3.org/TR/wai-aria/states_and_properties#aria-pressed
+  Desc: Indicates the current "pressed" state of toggle buttons. See related [aria-checked](http://www.w3.org/TR/wai-aria/states_and_properties#aria-checked) and [aria-selected](http://www.w3.org/TR/wai-aria/states_and_properties#aria-selected).
+  Used in Roles:
+    - button
+  Value:
+    - true (The element is pressed)
+    - false (The element supports being pressed but is not currently pressed)
+    - mixed (Indicated a mixed mode value for a tri-state toggle button)
+    - undefined | default (The element does not support being pressed)
+
+`aria-selected`
+  Link: http://www.w3.org/TR/wai-aria/states_and_properties#aria-selected
+  Desc: Indicates the current "selected" state of various widgets. See related [aria-checked](http://www.w3.org/TR/wai-aria/states_and_properties#aria-checked) and [aria-pressed](http://www.w3.org/TR/wai-aria/states_and_properties#aria-pressed).
+  Used in Roles:
+    - gridcell
+    - option
+    - row
+    - tab
+  Inherits into Role:
+    - columnheader
+    - menuitemradio
+    - radio
+    - rowheader
+    - treeitem
+  Value:
+    - true (The selectable element is selected)
+    - false (The selectable element is not selected)
+    - undefined | default (The element is not selectable)
+
