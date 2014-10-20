@@ -1,0 +1,13 @@
+var gulp = require('gulp');
+
+//////////////////////////////
+// Begin Lint Tasks
+//////////////////////////////
+require('./tasks/jshint')(gulp);
+
+//////////////////////////////
+// Begin Test Tasks
+//////////////////////////////
+require('./tasks/karma')(gulp);
+
+gulp.task('travis', ['karma--build']);
