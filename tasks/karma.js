@@ -32,4 +32,19 @@ module.exports = function (gulp, options) {
 
     karma.start(options, done);
   });
+
+  // Get code coverage
+  gulp.task('karma--coverage', function (done) {
+    options = options || karmaOptions;
+    options.singleRun = true;
+    options.preprocessors = {};
+    options.preprocessors['build/**/*.js'] = ['coverage'];
+    options.reporters = ['coverage', 'coveralls'];
+    options.coverageReporter = {
+      type: 'lcov',
+      dir: 'coverage/'
+    }
+
+    karma.start(options, done);
+  });
 }
