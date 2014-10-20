@@ -1,4 +1,4 @@
-# a11y.js
+# a11y.js [![Build Status](https://travis-ci.org/IBM-Watson/a11y.js.svg)](https://travis-ci.org/IBM-Watson/a11y.js)
 
 A collection of helper functions to make working with accessibility easier.
 
