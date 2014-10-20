@@ -104,6 +104,44 @@ if (window.a11y === null) {
     };
 
     //////////////////////////////
+    // State Validation
+    //////////////////////////////
+    this.validate = {
+      state: function (state, suppress) {
+        if (Object.keys(self.states).indexOf(state) === -1) {
+          if (suppress !== true) {
+            console.log('`' + state + '` is not a valid ARIA state');
+          }
+
+          return false;
+        }
+        else {
+          return true;
+        }
+      },
+      value: function (state, value, suppress) {
+        var val;
+        if (self.validate.state(state)) {
+          val = self.states[state].value;
+
+          if (val.indexOf(value) === -1) {
+            if (suppress !== true) {
+              console.log('`' + value + '` is not a valid value for `aria-' + state + '`');
+            }
+
+            return false;
+          }
+          else {
+            return true;
+          }
+        }
+        else {
+          return false;
+        }
+      }
+    };
+
+    //////////////////////////////
     // Gets the current state of the ARIA attribute
     //////////////////////////////
     this.get = function (el, attr) {
@@ -130,8 +168,48 @@ if (window.a11y === null) {
     // Sets the given state
     //////////////////////////////
     this.set = function (el, state, val) {
+      if (val === undefined) {
+        val = true;
+      }
+      else {
+        if (!self.validate.value(state, val)) {
+          val = null;
+        }
+      }
 
+      if (val !== null) {
+        el.setAttribute('aria-' + state, val);
+      }
     };
+
+    //////////////////////////////
+    // Toggles a given state
+    //////////////////////////////
+    this.toggle = function (el, state) {
+      var current = self.get(el, state);
+      if (current === null || current === 'false') {
+        self.set(el, state, true);
+      }
+      else if (current === 'true') {
+        self.set(el, state, false);
+      }
+      else {
+        console.log('Cannot toggle `aria-' + state + '` as it\'s starting value is not a boolean (it\'s `' + current + '`)');
+      }
+    };
+
+    //////////////////////////////
+    // Removes a given state
+    //////////////////////////////
+    this.remove = function (el, state) {
+      if (self.validate.value(state, undefined, true)) {
+        el.removeAttribute('aria-' + state);
+      }
+      else {
+        el.setAttribute('aria-' + state, false);
+      }
+    };
+
   }
 
 
