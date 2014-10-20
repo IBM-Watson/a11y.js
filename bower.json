@@ -1,0 +1,26 @@
+{
+  "name": "a11y.js",
+  "version": "1.0.0",
+  "authors": [
+    "Sam Richard <snugug@gmail.com>"
+  ],
+  "description": "Accessibility helpers",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "a11y"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "tasks",
+    "Gulpfile.js",
+    "aria-states.yml"
+  ]
+}
