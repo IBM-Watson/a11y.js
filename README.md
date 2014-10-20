@@ -1,6 +1,22 @@
-# a11y.js [![Build Status](https://travis-ci.org/IBM-Watson/a11y.js.svg)](https://travis-ci.org/IBM-Watson/a11y.js)
+# a11y.js [![Build Status](https://travis-ci.org/IBM-Watson/a11y.js.svg)](https://travis-ci.org/IBM-Watson/a11y.js) [![Coverage Status](https://img.shields.io/coveralls/IBM-Watson/a11y.js.svg)](https://coveralls.io/r/IBM-Watson/a11y.js) ![Bower Version](https://badge.fury.io/bo/a11y.js.svg)
 
 A collection of helper functions to make working with accessibility easier.
+
+## Installation
+
+`a11y.js` has no external dependencies and can be installed via [Bower](http://bower.io/):
+
+```bash
+$ bower install a11y.js --save
+```
+
+## State
+
+The first available set of helpers, `a11y.state` is a collection of functions for applying [ARIA States](http://www.w3.org/TR/wai-aria/states_and_properties). There are three main functions, `set`, `toggle`, and `remove`.
+
+* `a11y.state.set(element, state, value)` - This will set the `aria-{{state}}` of the given element. If the value isn't a valid value for the given state, it will not be applied.
+* `a11y.state.toggle(element, state)` - This will toggle the value of `aria-{{state}}` between `true` and `false`, provided that the initial value of the state is not set to a non-boolean (for instance, `grammar` for `aria-invalid`).
+* `a11y.state.remove(element, state)` - This will either remove the `aria-{{state}}` attribute completely if that state can be set to `undefined`, or will set the state to `false` if it cannot be.
 
 ## License
 
