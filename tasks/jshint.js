@@ -26,4 +26,10 @@ module.exports = function (gulp, lintPaths) {
       .pipe(jshint.reporter(stylish))
       .pipe(reload({stream: true}));
   });
+
+  gulp.task('jshint--dev', function () {
+    lintPaths = lintPaths || toLint;
+
+    gulp.watch(lintPaths, ['jshint']);
+  });
 }

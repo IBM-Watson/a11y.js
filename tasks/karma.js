@@ -18,7 +18,7 @@ var karmaOptions = {
 //////////////////////////////
 module.exports = function (gulp, options) {
   // Run once
-  gulp.task('karma--build', function (done) {
+  gulp.task('karma', function (done) {
     options = options || karmaOptions;
     options.singleRun = true;
 
