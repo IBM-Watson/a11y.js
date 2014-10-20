@@ -21,6 +21,8 @@
     "tests",
     "tasks",
     "Gulpfile.js",
-    "aria-states.yml"
+    "aria-states.yml",
+    "package.json",
+    "karma.conf.js"
   ]
 }
