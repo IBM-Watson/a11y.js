@@ -14,6 +14,14 @@ require('./tasks/jshint')(gulp, [
 require('./tasks/karma')(gulp);
 
 //////////////////////////////
+// Dist Tasks
+//////////////////////////////
+require('./tasks/dist')(gulp, [
+  'build/**/*.js',
+  '!build/**/*.min.js'
+]);
+
+//////////////////////////////
 // Custom Tasks
 //////////////////////////////
 gulp.task('dev', ['jshint--dev', 'karma--dev']);
