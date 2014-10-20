@@ -25,4 +25,4 @@ require('./tasks/dist')(gulp, [
 // Custom Tasks
 //////////////////////////////
 gulp.task('dev', ['jshint--dev', 'karma--dev']);
-gulp.task('travis', ['karma']);
+gulp.task('travis', ['karma', 'karma--coverage']);
