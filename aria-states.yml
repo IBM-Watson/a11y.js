@@ -1,3 +1,4 @@
+# Consider updating from https://www.ssbbartgroup.com/blog/2014/06/05/how-not-to-misuse-aria-states-properties-and-roles/
 Definitions:
   Used in Roles: Advisory information about roles that use this state or property. This information is provided to help understand the appropriate usage of the state or property. Use of a given state or property is not defined when used on roles other than those listed.
   Inherits into Roles: Advisory information about roles that inherit the state or property from an ancestor role.
