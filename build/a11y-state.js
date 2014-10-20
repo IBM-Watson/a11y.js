@@ -31,6 +31,75 @@ if (window.a11y === null) {
       	  'mixed',
       	  undefined
       	]
+      },
+      'disabled': {
+        'used': true,
+        'value': [
+          true,
+          false
+        ]
+      },
+      'expanded': {
+        'used': [
+          'button',
+          'document',
+          'link',
+          'section',
+          'sectionhead',
+          'separator',
+          'window'
+        ],
+        'value': [
+          true,
+          false,
+          undefined
+        ]
+      },
+      'grabbed': {
+        'used': true,
+        'value': [
+          true,
+          false,
+          undefined
+        ]
+      },
+      'hidden': {
+        'used': true,
+        'value': [
+          true,
+          false
+        ]
+      },
+      'invalid': {
+        'used': true,
+        'value': [
+          true,
+          false,
+          'grammar',
+          'spelling'
+        ]
+      },
+      'pressed': {
+        'used': ['button'],
+        'value': [
+          true,
+          false,
+          'mixed',
+          undefined
+        ]
+      },
+      'selected': {
+        'used': [
+          'gridcell',
+          'option',
+          'row',
+          'tab'
+        ],
+        'value': [
+          true,
+          false,
+          undefined
+        ]
       }
     };
 
