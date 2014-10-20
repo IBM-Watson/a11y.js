@@ -2,7 +2,9 @@
  * The global a11y-state object that contains all functionality.
  *
  */
-var a11y = {};
+if (window.a11y === null) {
+  window.a11y = {};
+}
 
 (function (a11y, module, define) {
   'use strict';
@@ -15,20 +17,20 @@ var a11y = {};
     //////////////////////////////
     this.states = {
       'busy': {
-	'used': true,
-	'value': [
-	  true,
-	  false
-	]
+      	'used': true,
+      	'value': [
+      	  true,
+      	  false
+      	]
       },
       'checked': {
-	'used': ['option'],
-	'value': [
-	  true,
-	  false,
-	  'mixed',
-	  undefined
-	]
+      	'used': ['option'],
+      	'value': [
+      	  true,
+      	  false,
+      	  'mixed',
+      	  undefined
+      	]
       }
     };
 
@@ -45,13 +47,13 @@ var a11y = {};
     this.has = function (el, attr) {
       var state = self.get(el, attr);
       if (state === null) {
-	return false;
+      	return false;
       }
       else if (state === false || state === 'false') {
-	return false;
+      	return false;
       }
       else {
-	return true;
+      	return true;
       }
     };
 
@@ -60,7 +62,7 @@ var a11y = {};
     //////////////////////////////
     this.set = function (el, state, val) {
 
-    }
+    };
   }
 
 
