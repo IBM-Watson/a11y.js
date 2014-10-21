@@ -1,4 +1,4 @@
-# a11y.js [![Build Status](https://travis-ci.org/IBM-Watson/a11y.js.svg)](https://travis-ci.org/IBM-Watson/a11y.js) [![Coverage Status](https://img.shields.io/coveralls/IBM-Watson/a11y.js.svg)](https://coveralls.io/r/IBM-Watson/a11y.js) ![Bower Version](https://badge.fury.io/bo/a11y.js.svg)
+# a11y.js [![Build Status](https://travis-ci.org/IBM-Watson/a11y.js.svg)](https://travis-ci.org/IBM-Watson/a11y.js) [![Coverage Status](https://img.shields.io/coveralls/IBM-Watson/a11y.js.svg)](https://coveralls.io/r/IBM-Watson/a11y.js) [![Bower Version](https://badge.fury.io/bo/a11y.js.svg)](https://github.com/IBM-Watson/a11y.js/releases)
 
 A collection of helper functions to make working with accessibility easier.
 
