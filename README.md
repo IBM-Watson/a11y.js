@@ -18,6 +18,8 @@ The first available set of helpers, `a11y.state` is a collection of functions fo
 * `a11y.state.toggle(element, state)` - This will toggle the value of `aria-{{state}}` between `true` and `false`, provided that the initial value of the state is not set to a non-boolean (for instance, `grammar` for `aria-invalid`).
 * `a11y.state.remove(element, state)` - This will either remove the `aria-{{state}}` attribute completely if that state can be set to `undefined`, or will set the state to `false` if it cannot be.
 
+`a11y.state` will provide warnings and throw errors to help provide information about what is going on, should they come up. To globally suppress warnings and errors (for instance, in production), set `a11y.state.suppressWarnings = true`.
+
 ## License
 
 The MIT License (MIT)
