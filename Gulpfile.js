@@ -18,6 +18,7 @@ require('./tasks/karma')(gulp);
 //////////////////////////////
 require('./tasks/dist')(gulp, [
   'build/**/*.js',
+  '!build/a11y-setup.js',
   '!build/**/*.min.js'
 ]);
 
@@ -26,3 +27,4 @@ require('./tasks/dist')(gulp, [
 //////////////////////////////
 gulp.task('dev', ['jshint--dev', 'karma--dev']);
 gulp.task('travis', ['karma', 'karma--coverage']);
+gulp.task('build', ['dist--each', 'dist--all']);

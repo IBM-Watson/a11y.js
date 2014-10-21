@@ -12,6 +12,8 @@
     "browser-sync": "^1.5.8",
     "compass-options": "^0.1.1",
     "gulp": "^3.8.8",
+    "gulp-concat": "^2.4.1",
+    "gulp-insert": "^0.4.0",
     "gulp-jasmine": "^1.0.1",
     "gulp-jshint": "^1.8.5",
     "gulp-rename": "^1.2.0",
