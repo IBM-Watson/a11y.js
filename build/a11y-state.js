@@ -16,6 +16,11 @@
     var self = this;
 
     //////////////////////////////
+    // Toggle for suppressing output
+    //////////////////////////////
+    this.suppressWarnings = false;
+
+    //////////////////////////////
     // State Crosscheck
     //////////////////////////////
     this.states = {
@@ -112,8 +117,8 @@
     this.validate = {
       state: function (state, suppress) {
         if (Object.keys(self.states).indexOf(state) === -1) {
-          if (suppress !== true) {
-            console.log('`' + state + '` is not a valid ARIA state');
+	  if (suppress !== true && !self.suppressWarnings) {
+	    console.error('`' + state + '` is not a valid ARIA state');
           }
 
           return false;
@@ -128,8 +133,8 @@
           val = self.states[state].value;
 
           if (val.indexOf(value) === -1) {
-            if (suppress !== true) {
-              console.log('`' + value + '` is not a valid value for `aria-' + state + '`');
+	    if (suppress !== true && !self.suppressWarnings) {
+	      console.error('`' + value + '` is not a valid value for `aria-' + state + '`');
             }
 
             return false;
@@ -197,7 +202,9 @@
         self.set(el, state, false);
       }
       else {
-        console.log('Cannot toggle `aria-' + state + '` as it\'s starting value is not a boolean (it\'s `' + current + '`)');
+	if (!self.suppressWarnings) {
+	  console.info('Cannot toggle `aria-' + state + '` as it\'s starting value is not a boolean (it\'s `' + current + '`)');
+	}
       }
     };
 
