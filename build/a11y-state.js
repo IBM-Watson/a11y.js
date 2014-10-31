@@ -1,7 +1,7 @@
 (function (a11y, module, define) {
   'use strict';
 
-  function A11yState() {
+  var A11yState = function A11yState () {
     var self = this;
 
     //////////////////////////////
@@ -14,20 +14,20 @@
     //////////////////////////////
     this.states = {
       'busy': {
-      	'used': true,
-      	'value': [
-      	  true,
-      	  false
-      	]
+	'used': true,
+	'value': [
+	  true,
+	  false
+	]
       },
       'checked': {
-      	'used': ['option'],
-      	'value': [
-      	  true,
-      	  false,
-      	  'mixed',
-      	  undefined
-      	]
+	'used': ['option'],
+	'value': [
+	  true,
+	  false,
+	  'mixed',
+	  undefined
+	]
       },
       'disabled': {
         'used': true,
@@ -104,35 +104,32 @@
     // State Validation
     //////////////////////////////
     this.validate = {
-      state: function (state, suppress) {
+      'state': function (state, suppress) {
         if (Object.keys(self.states).indexOf(state) === -1) {
-	  if (suppress !== true && !self.suppressWarnings) {
-	    console.error('`' + state + '` is not a valid ARIA state');
+    if (suppress !== true && !self.suppressWarnings) {
+      console.error('`' + state + '` is not a valid ARIA state');
           }
 
           return false;
-        }
-        else {
+	} else {
           return true;
         }
       },
-      value: function (state, value, suppress) {
+      'value': function (state, value, suppress) {
         var val;
         if (self.validate.state(state)) {
           val = self.states[state].value;
 
           if (val.indexOf(value) === -1) {
-	    if (suppress !== true && !self.suppressWarnings) {
-	      console.error('`' + value + '` is not a valid value for `aria-' + state + '`');
+      if (suppress !== true && !self.suppressWarnings) {
+	console.error('`' + value + '` is not a valid value for `aria-' + state + '`');
             }
 
             return false;
-          }
-          else {
+	  } else {
             return true;
           }
-        }
-        else {
+	} else {
           return false;
         }
       }
@@ -151,13 +148,11 @@
     this.has = function (el, attr) {
       var state = self.get(el, attr);
       if (state === null) {
-      	return false;
-      }
-      else if (state === false || state === 'false') {
-      	return false;
-      }
-      else {
-      	return true;
+	return false;
+      } else if (state === false || state === 'false') {
+	return false;
+      } else {
+	return true;
       }
     };
 
@@ -167,8 +162,7 @@
     this.set = function (el, state, val) {
       if (val === undefined) {
         val = true;
-      }
-      else {
+      } else {
         if (!self.validate.value(state, val)) {
           val = null;
         }
@@ -189,8 +183,7 @@
       }
       else if (current === 'true') {
         self.set(el, state, false);
-      }
-      else {
+      } else {
 	if (!self.suppressWarnings) {
 	  console.info('Cannot toggle `aria-' + state + '` as it\'s starting value is not a boolean (it\'s `' + current + '`)');
 	}
@@ -203,13 +196,11 @@
     this.remove = function (el, state) {
       if (self.validate.value(state, undefined, true)) {
         el.removeAttribute('aria-' + state);
-      }
-      else {
+      } else {
         el.setAttribute('aria-' + state, false);
       }
     };
-
-  }
+  };
 
 
   //////////////////////////////
@@ -230,4 +221,4 @@
   } else {
     window.a11y = a11y;
   }
-})(window.a11y, window.module, window.define);
+}(window.a11y, window.module, window.define));
